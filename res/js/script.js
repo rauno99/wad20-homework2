@@ -77,9 +77,43 @@ $.getJSON(postsURL, function (data) {
 
 $(document).on("click", '.like-button', function () {
     $(this).toggleClass('liked');
-    console.log("asdasd")
 });
 
 
 
+var usersUrl = 'https://private-anon-b7a1f38408-wad20postit.apiary-mock.com/profiles';
+$.getJSON(usersUrl, function(data){
+    $.each(data, function () {
+        var firstName = this.firstname;
+        var lastName = this.lastname;
+        var avatar = this.avatar;
+        var name = firstName.concat(" " + lastName);
+        
+        let userInfo = `<div class="grid-item">
+                            <div class="avatar">
+                                <img src=` + avatar + ` alt="User">
+                            </div>
+                            <div class="name">
+                                <h3>` + name + `</h3>
+                            </div>
+                            <div class="profile-actions">
+                                <button type="button" name="Follow" class="followButton">Follow</button>
+                            </div>
+                        </div>`
 
+        $('.grid-container').append(userInfo);
+    });
+
+    console.log(data);
+});
+
+$(document).on("click", '.followButton', function () {
+    $(this).toggleClass('followed');
+    if ($(this).text() == "Follow") {
+        $(this).text("Followed");
+    }
+    else {
+        $(this).text("Follow");
+    }
+    
+});

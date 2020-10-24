@@ -251,3 +251,61 @@ nav div.avatar-container {
     flex-direction: column;
     right: 0px;
 }
+
+.main{
+    width: 50%;
+    min-height: 100%;
+    margin: auto auto;
+    padding: 90px 15px 15px 15px;
+    background-color: #ffffff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: white;
+    margin: 15px 15px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    border-radius: 5px;
+  }
+
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    width: 90%;
+    height: 200px;
+    box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
+  }
+
+  .avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    margin: 5px;
+}
+
+.name{
+    font-size: 50%;
+}
+
+.followButton {
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-color: purple;
+    width: 85px;
+    height: 30px;
+    line-height: 10px;
+    text-align: center;
+    border: 1px solid purple;
+}
+
+.followButton.followed {
+    background-color: white;
+    color: purple;
+}
